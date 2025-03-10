@@ -1,0 +1,38 @@
+[project]
+name = "infolens"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "LQR471814", email = "42160088+LQR471814@users.noreply.github.com" }
+]
+dependencies = [
+    "agno>=1.1.9",
+    "python-dotenv>=1.0.1",
+    "google>=3.0.0",
+    "google-genai>=1.5.0",
+    "duckduckgo-search>=7.5.1",
+    "openai>=1.65.5",
+    "pypdf>=5.3.1",
+    "lancedb>=0.20.0",
+    "tantivy>=0.22.0",
+    "pandas>=2.2.3",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+main = 'infolens:main'
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/infolens"]
