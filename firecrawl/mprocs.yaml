@@ -1,0 +1,12 @@
+procs:
+  playwright-service:
+    cwd: "./repo/apps/playwright-service-ts"
+    shell: "pnpm run start"
+  workers:
+    cwd: "./repo/apps/api"
+    shell: "pnpm run workers"
+  api:
+    cwd: "./repo/apps/api"
+    shell: "pnpm run start"
+  redis:
+    shell: "redis-server"
