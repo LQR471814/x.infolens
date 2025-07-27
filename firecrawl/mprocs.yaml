@@ -1,12 +1,18 @@
 procs:
   playwright-service:
     cwd: "./repo/apps/playwright-service-ts"
-    shell: "pnpm run start"
+    shell: "kill -9 $(lsof -i :3002 | awk 'NR==2 {print $2}'); pnpm run start"
+    env:
+      PORT: "3002"
   workers:
     cwd: "./repo/apps/api"
     shell: "pnpm run workers"
+    env:
+      PORT: "3001"
   api:
     cwd: "./repo/apps/api"
     shell: "pnpm run start"
+    env:
+      PORT: "3000"
   redis:
-    shell: "redis-server"
+    shell: "kill -9 $(lsof -i :6379 | awk 'NR==2 {print $2}'); redis-server"

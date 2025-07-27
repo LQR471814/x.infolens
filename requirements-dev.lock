@@ -122,6 +122,7 @@ pyyaml==6.0.2
     # via agno
 requests==2.32.3
     # via google-genai
+    # via infolens
 rich==13.9.4
     # via agno
     # via typer
